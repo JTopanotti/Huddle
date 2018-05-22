@@ -10,14 +10,19 @@ import * as firebase from 'firebase';
 })
 export class RegisterPage {
   newUser = {email: "", password: ""};
-  ref = firebase.database().ref('users/');
+  //ref = firebase.database().ref('users/');
 
   constructor(public navCtrl: NavController) {
 
   }
 
   addUser(){
-    this.ref.push(this.newUser);
+    firebase.auth().createUserWithEmailAndPassword(
+      this.newUser.email, this.newUser.password).catch(function(error) {
+        let errorCode = error.code;
+        let errorMessage = error.message;
+        console.log(`ERROR: error code ${errorCode}: ${errorMessage}`);
+      });
   }
 
 }

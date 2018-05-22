@@ -11,15 +11,15 @@
   <ion-row>
     <ion-col col-9>
       <ion-item>
-        <ion-input type="text" [(ngModel)]="newUser.email" placeholder="Email"></ion-input>
+        <ion-input type="text" [(ngModel)]="user.email" placeholder="Email" required></ion-input>
       </ion-item>
       <ion-item>
-        <ion-input type="password" [(ngModel)]="newUser.password" placeholder="Password"></ion-input>
+        <ion-input type="password" [(ngModel)]="user.password" placeholder="Password" required></ion-input>
       </ion-item>
     </ion-col>
 
   </ion-row>
   <ion-row>
-    <button ion-button block (click)="addUser()">Add</button>
+    <button ion-button block (click)="login()">Add</button>
   </ion-row>
 </ion-content>
